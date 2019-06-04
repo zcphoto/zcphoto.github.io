@@ -72,7 +72,7 @@ void draw(){
   if(x < -(2*bg.width+12)){
     x=0;
   } 
-  //SQUID CODE!!
+  //BIRDCODE
   for(int i = 0; i<numKnives ; i++){
     kx[i]-= 2;
     if(kx[i] < -10){
@@ -102,7 +102,7 @@ void draw(){
   x--;
   checkplane();
   
-  //FIREBALL CODE
+
 
       
  
@@ -111,11 +111,11 @@ void draw(){
   } 
  //END GAMESTATE 0 
  }
-  //Mario Dies:
+  //plane Crashes
   if(gameState==1){
     //BEGIN BUTTON
     textSize(34);   //SIZE OF TEXT
-    text("You died!!!", 100,146);
+    text("SCORE :3 HIGHSCORE 3", 100,146);
     fill(245); 
     rect(90,160, 240, 45, 10);  //BACKGROUND OF BUTTON
     fill(0);
