@@ -6,7 +6,7 @@
 </head>
 <body>
 
-
+/* This is my code for my flappy bird remake, the important parts of this code include the score tracking the in line comments and the variation of the features from the original flappy bird*/
 <script type="text/processing">
 import processing.pdf.*;
 PFont font1; PFont font2; PFont bold;
@@ -207,17 +207,7 @@ void checkplane(){
     gameState =1;
   }
 }
-void chaseMario(){
-   if(by > py && chaseCount%3==0){
-     by--;
-     bx--;
-   }
-   if(by < py && chaseCount%3==0){
-     by++;
-     bx--;
-   }
-   chaseCount++;
-}
+
 
 
 
