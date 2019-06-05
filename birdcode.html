@@ -52,15 +52,15 @@ void setup(){
   }
   
 }
-void draw(){
+void draw(){//main function
   /* This first part of the draw function creates the moving background image */
   moveSpeed++;
   count++;
   move();
-  if(score > highScore){
+  if(score > highScore){//this part updates the highscore
         highScore = score;
   }
-  if(gameState==0){
+  if(gameState==0){//this sets a whole gamestate for conditions
   /*This is the first background image that then has an inverse later */
   image(bg, x, 0);
   image(bgR, x+bg.width-6, 0);
@@ -76,7 +76,7 @@ void draw(){
     x=0;
   } 
   /*This is the code for the birds that fly into the plane */
-  for(int i = 0; i<numbirds ; i++){
+  for(int i = 0; i<numbirds ; i++){//birds amount
     kx[i]-= 2;
     if(kx[i] < -10){
       score++;
@@ -88,7 +88,7 @@ void draw(){
       fx = width +20000;
       score++;
     }
-    if(abs((int)((px+21)-(kx[i]+0))) < 20 && abs((int)((py+34) - (ky[i]+41))) < 74){
+    if(abs((int)((px+78)-(kx[i]+63))) < 110 && abs((int)((py+31) - (ky[i]+51))) < 52){
       gameState=1;
     }
     image(bird, kx[i], ky[i]);
@@ -156,7 +156,7 @@ void draw(){
   
   /*this part of the code is the start screen */
 fill(255);
-  textSize(18);//this is the size of the text
+  textSize(18);//this is the size of thefont
   text("Score: " + score, width -130, 30);
   text("High Score: " + highScore, width - 130, 50);
  
@@ -171,7 +171,7 @@ fill(255);
     }   
     textFont(font2);
     text("MOVE:  LEFT/RIGHT MOUSE", 15, 145);
-    text("FIRE:  SPACE OR RIGHT CLICK", 15, 170);
+    text("Right Click To Change Speed", 15, 170);
     text("FLAP:  LEFT CLICK", 15, 195); 
     
     fill(0,0,0, 255);
