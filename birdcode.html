@@ -88,7 +88,7 @@ void draw(){//main function
       fx = width +20000;
       score++;
     }
-    if(abs((int)((px+78)-(kx[i]+63))) < 110 && abs((int)((py+31) - (ky[i]+51))) < 52){
+    if(abs((int)((px+78)-(kx[i]+63))) < 110 && abs((int)((py+31) - (ky[i]+5))) < 52){
       gameState=1;
     }
     image(bird, kx[i], ky[i]);
@@ -184,14 +184,15 @@ fill(255);
 }
 //this is the moouse section of the code
 void move(){
-  if (mouseX > px){    
-    px+=2;
-  }
-  else if(mouseX < px){
-    px-=2;
-  }
+ if(keyPressed){
+   if(px>0 && keyCode == LEFT){
+     px -= 2;
+   }
+   else if(px < width/2 && keyCode == RIGHT){
+     px += 2;
+   }
+ }
 }
-
 
 void mousePressed(){
   if(mouseButton == LEFT){
